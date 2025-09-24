@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bus ticket booking</title>
+	<style type="text/css">
+	.bus1{
+		margin-bottom:-5px ;
+		background: #66a1f3;
+	}
+	.bt1{
+		background-color: #D6DBDF;
+		border: 5px double#A9CCE3;
+		width: 40%;
+		padding: 15px;
+		border-radius: 10px;
+	}
+	.sel{
+		font-size: 25px;
+		border-radius: 10px;
+		margin: 10px;
+		padding: 10px;
+	}
+	.btn{
+		background-color: #F0B27A;
+		font-size: 20px;
+		padding: 10px;
+		border-radius: 10px;
+		font-family: ;
+		box-shadow: 2px 4px 5px rgb(0,0,0,0.5);
+	}
+	.bs1{
+		width: 102%;
+		margin-left: -8px;
+		margin-right: 40px;
+	}	
+	</style>
+</head>
+<body>
+	<center>
+		<div class="bt1">
+		<h1>Bus Ticket Booking</h1>
+		<form>
+			<select class="sel" id="f1">
+				<option>--Select Start</option>
+				<option value="53">Gorakhpur</option>
+				<option value="52">Deoria</option>
+				<option value="54">Agra</option>
+				<option value="55">Mathura</option>
+				<option value="56">Aligarh</option>
+			</select>
+			<img src="bus1.svg" class="bus1" height="20px" width="20px">
+			<select class="sel" id="f2">
+				<option>--Select Stop</option>
+				<option value="53">Gorakhpur</option>
+				<option value="52">Deoria</option>
+				<option value="54">Agra</option>
+				<option value="55">Mathura</option>
+				<option value="56">Aligarh</option>
+			</select>
+			<input type="date" name="" class="sel" id="dt"><br>
+			<button onclick="book()" class="btn">Book Ticket</button>
+		</form><hr>
+		<img src="bus.png" class="bs1"><hr>
+		<h1>Your Ticket</h1>
+		<div style="text-align: left;">
+			<h2><span>Start Point  :</span><span id="s1"></span></h2>
+			<h2><span>Stop Point  :</span><span id="s2"></span></h2>
+			<h2><span>Price  :</span><span id="p1"></span></h2>
+			<h2><span>Date  :</span><span id="d1"></span></h2>
+			<h2><span>Distance  :</span><span id="d2"></span></h2>
+		</div>
+		<button class="btn" onclick="window.print()">Print</button>	
+		</div>
+		</center>
+		<script type="text/javascript">
+			function book() 
+			{
+			event.preventDefault();
+			let f1=(document.getElementById('f1').value);
+			let f2=(document.getElementById('f2').value);
+			let date=document.getElementById('dt').value;
+			if(f1==53 && f2==52) 
+			{
+			document.getElementById('s1').innerHTML="Gorakhpur";
+			document.getElementById('s2').innerHTML="Deoria";
+			document.getElementById('p1').innerHTML="45";
+			document.getElementById('d1').innerHTML=date;
+			document.getElementById('d2').innerHTML="49KM";
+			}
+			else if(f1==53 && f2==54)
+			{
+			document.getElementById('s1').innerHTML="Gorakhpur";
+			document.getElementById('s2').innerHTML="Agra";
+			document.getElementById('p1').innerHTML="₹50";
+			document.getElementById('d1').innerHTML=date;
+			document.getElementById('d2').innerHTML="48KM";
+
+			}
+			else if(f1==53 && f2==55)
+			{
+				document.getElementById('s1').innerHTML="Gorakhpur";
+				document.getElementById('s2').innerHTML="Mathura";
+				document.getElementById('p1').innerHTML="₹90";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="59KM";
+			}
+			else if(f1==53 && f2==56)
+			{
+				document.getElementById('s1').innerHTML="Gorakhpur";
+				document.getElementById('s2').innerHTML="Aligarh";
+				document.getElementById('p1').innerHTML="₹120";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="65KM";
+			}
+			else if(f1==52 && f2==53) 
+			{
+				document.getElementById('s1').innerHTML="Deoria";
+				document.getElementById('s2').innerHTML="Gorakhpur";
+				document.getElementById('p1').innerHTML="₹65";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="52KM";
+			}
+			else if(f1==52 && f2==54)
+			{
+				document.getElementById('s1').innerHTML="Deoria";
+				document.getElementById('s2').innerHTML="Agra";
+				document.getElementById('p1').innerHTML="₹77";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="680KM";
+			}
+			else if(f1==52 && f2==55)
+			{
+				document.getElementById('s1').innerHTML="Deoria";
+				document.getElementById('s2').innerHTML="Mathura";
+				document.getElementById('p1').innerHTML="₹70";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="62KM";
+			}
+			else if(f1==52 && f2==56)
+			{
+				document.getElementById('s1').innerHTML="Deoria";
+				document.getElementById('s2').innerHTML="Aligarh";
+				document.getElementById('p1').innerHTML="₹180";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="83KM";
+			}
+			else if(f1==54 && f2==53) 
+			{
+				document.getElementById('s1').innerHTML="Agra";
+				document.getElementById('s2').innerHTML="Gorakhpur";
+				document.getElementById('p1').innerHTML="₹65";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="52KM";
+			}
+			else if(f1==54 && f2==52)
+			{
+				document.getElementById('s1').innerHTML="Agra";
+				document.getElementById('s2').innerHTML="Deoria";
+				document.getElementById('p1').innerHTML="₹79";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="68KM";
+			}
+			else if(f1==54 && f2==55)
+			{
+				document.getElementById('s1').innerHTML="Agra";
+				document.getElementById('s2').innerHTML="Mathura";
+				document.getElementById('p1').innerHTML="₹176";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="81KM";
+			}
+			else if(f1==54 && f2==56)
+			{
+				document.getElementById('s1').innerHTML="Agra";
+				document.getElementById('s2').innerHTML="Aligarh";
+				document.getElementById('p1').innerHTML="₹188";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="88KM";
+			}
+			else if(f1==55 && f2==53)
+			{
+				document.getElementById('s1').innerHTML="Mathura";
+				document.getElementById('s2').innerHTML="Gorakhpur";
+				document.getElementById('p1').innerHTML="₹111";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="60KM";
+			}
+			else if(f1==55 && f2==52)
+			{
+				document.getElementById('s1').innerHTML="Mathura";
+				document.getElementById('s2').innerHTML="Deoria";
+				document.getElementById('p1').innerHTML="₹88";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="99KM";
+			}
+			else if(f1==55 && f2==54)
+			{
+				document.getElementById('s1').innerHTML="Mathura";
+				document.getElementById('s2').innerHTML="Agra";
+				document.getElementById('p1').innerHTML="₹170";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="70KM";
+			}
+			else if(f1==55 && f2==56)
+			{
+				document.getElementById('s1').innerHTML="Mathura";
+				document.getElementById('s2').innerHTML="Aligarh";
+				document.getElementById('p1').innerHTML="₹177";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="97KM";
+			}
+			 else if(f1==56 && f2==53)
+			{
+				document.getElementById('s1').innerHTML="Aligarh";
+				document.getElementById('s2').innerHTML="Gorakhpur";
+				document.getElementById('p1').innerHTML="₹110";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="66KM";
+			}
+			else if(f1==56 && f2==52)
+			{
+				document.getElementById('s1').innerHTML="Aligarh";
+				document.getElementById('s2').innerHTML="Deoria";
+				document.getElementById('p1').innerHTML="₹87";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="77KM";
+			}
+			else if(f1==56 && f2==54)
+			{
+				document.getElementById('s1').innerHTML="Aligarh";
+				document.getElementById('s2').innerHTML="Agra";
+				document.getElementById('p1').innerHTML="₹185";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="78KM";
+			}
+			else if(f1==56 && f2==55)
+			{
+				document.getElementById('s1').innerHTML="Aligarh";
+				document.getElementById('s2').innerHTML="Mathura";
+				document.getElementById('p1').innerHTML="₹166";
+				document.getElementById('d1').innerHTML=date;
+				document.getElementById('d2').innerHTML="45KM";
+			}     
+			}
+		</script>
+</body>
+</html>
